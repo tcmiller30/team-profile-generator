@@ -1,0 +1,30 @@
+:root{
+    --light: #FFFBFE;
+    --purple: #4D2ACD;
+    --indigo: #3A3FC1;
+}
+body{
+    background-color: var(--light);
+}
+#title{
+    background-color: var(--purple);
+    text-align: center;
+    color: var(--light);
+}
+.card-header{
+    background-color: var(--indigo);
+    color: white
+}
+.list-group{
+    margin: 5%;
+}
+.card-body{
+    background-color: var(--light);
+}
+.card{
+    filter: drop-shadow(4px 4px 4px);
+}
+.name{
+    font-weight: bolder;
+    font-size:x-large;
+}
