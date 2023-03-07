@@ -7,39 +7,50 @@ inquirer
     .prompt([
         {
             type: 'input',
-            message: "What is the new team member's name?",
+            message: "What is the name of the manager?",
             name: 'name'
         },
         {
             type:'input',
-            message: 'What is their ID?',
+            message: 'What is their Employee ID?',
             name: 'id'
         },
         {
             type:'input',
-            message: 'What is their email?',
+            message: 'What is their email address?',
             name: 'email'
+        },
+        {
+            type: 'input',
+            message: 'What is their office number?',
+            name: 'office'
         }
-    ])
+    ]).then((answers) => {
+        console.log(answers);
+        askForNewMember();
+    })
 
     const askForNewMember = () => {
         inquirer
             .prompt([
                 {
                     type: 'list',
-                    message: 'Would you like to add another member to the team?',
+                    message: 'Do you have any Engineers or Interns left to add?',
                     name: 'newMember',
                     choices: [
-                        'Yes',
-                        'No' ]
+                        'Engineer',
+                        'Intern',
+                        'Done' ]
                 }
             ]) .then((answers) => {
-                if(answers.newMember == 'Yes'){
-                    newMember()
+                if(answers.newMember[0]){
+                    console.log('You want to add an engineer?')
                 }
-                else{
-                    console.log('Generation Complete!')
+                else if(answers.newMember[1]){
+                    console.log('You want to add an engineer?')
                     return
+                }else if(answers.newmember[2]){
+                    console.log('You are done?')
                 }
             })
     }
