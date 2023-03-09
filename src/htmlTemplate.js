@@ -1,3 +1,4 @@
+// Templates for Employee/Role Cards
 const managerCard = manager => 
 
 `
@@ -61,10 +62,11 @@ const internCard = intern =>
                 </div>
 `
 
-
+// Iterates through each object in the array of Team Members from inquirer in index.js
 const cardGroup = teamMembers => {
     let htmlTemplate = '';
 
+    // Determines which card template to used based of the team member's role
     for(let i = 0; i < teamMembers.length; i++){
         if(teamMembers[i].getRole() === 'Engineer'){
             htmlTemplate += engineerCard(teamMembers[i]);
@@ -80,7 +82,7 @@ const cardGroup = teamMembers => {
 }
 
 
-
+// Splices generated Card Group into an HTML Template
 const htmlGen = data =>
 `
 <!DOCTYPE html>
