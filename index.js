@@ -1,8 +1,8 @@
 // Requirements for node modules
 const inquirer = require('inquirer');
-const fs = require('fs');
+const htmlGen = require('./src/htmlTemplate')
+const writeFile = require('./src/writeFile');
 
-const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
@@ -126,8 +126,9 @@ const teamList = [];
             })
     }
 
-    const generateHTML = () => {
-
+    const generateHTML = (teamMembers) => {
+        let html = htmlGen(teamMembers);
+        writeFile(html);
     }
 
     function init() {getManager();}

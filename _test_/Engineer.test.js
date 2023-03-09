@@ -4,26 +4,26 @@ describe('Engineer', () => {
     
     describe('Initialization', () => {
         it('should return a new Engineer object if provided proper parameters', () => {
-            const engineer = new Engineer('Bob', 1234, 'bob@gmail.com', 'bobGithub')
+            const engineer = new Engineer('John', 1234, 'john@gmail.com', 'johnGithub')
 
-            expect(engineer.name).toEqual('Bob');
+            expect(engineer.name).toEqual('John');
             expect(engineer.id).toEqual(1234);
-            expect(engineer.email).toEqual('bob@gmail.com');
-            expect(engineer.github).toEqual('bobGithub');
+            expect(engineer.email).toEqual('john@gmail.com');
+            expect(engineer.github).toEqual('johnGithub');
         })
     })
 
     describe('getGitHub', () => {
         it('should get the given GitHub from the Engineer obj', () => {
-            const engineer = new Engineer('Bob', 1234, 'bob@gmail.com', 'bobGithub')
+            const engineer = new Engineer('John', 1234, 'john@gmail.com', 'johnGithub')
 
-            expect(engineer.getGitHub()).toEqual('bobGithub');
+            expect(engineer.getGitHub()).toEqual('johnGithub');
         })
     })
 
     describe('getRole', () => {
         it('should return the role Engineer', () => {
-            const engineer = new Engineer('Bob', 1234, 'bob@gmail.com', 'bobGithub')
+            const engineer = new Engineer('John', 1234, 'john@gmail.com', 'johnGithub')
 
             expect(engineer.getRole()).toEqual('Engineer')
         })
